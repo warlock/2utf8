@@ -23,7 +23,7 @@
   "homepage": "http://www.spellbook.io",
   "dependencies": {
     "charset": "^1.0.0",
-    "iconv": "^2.2.2",
+    "iconv": "2.2.1",
     "jschardet": "^1.4.2",
     "node-icu-charset-detector": "^0.2.0",
     "spellbook": "^0.1.17"
