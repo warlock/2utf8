@@ -11,22 +11,26 @@ http://npmjs.com/package/2utf8
 ```
 https://github.com/warlock/2utf8
 ```
+### Install in Debian based:
+```
+apt-get install build-essential libicu-dev
+```
 
 # Examples:
 **From string:**
 ```javascript
-var 2utf8 = require('2utf8')
-var text = 2utf8(string_from_other_encoding);
+var toUtf8 = require('2utf8')
+var text = toUtf8(string_from_other_encoding);
 console.log(text)
 ```
 
 **With html headers from request:**
 ```javascript
-var 2utf8 = require('2utf8', )
+var toUtf8 = require('2utf8')
 var request = require(request)
 
 request('http://www.spellbook.io', (err, res, body) => {
-  var text = 2utf8(body, res.headers);
+  var text = toUtf8(body, res.headers);
   console.log(text)
 })
 ```

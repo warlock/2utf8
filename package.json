@@ -1,6 +1,6 @@
 {
   "name": "2utf8",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tranform string text to UTF-8",
   "main": "2utf8.js",
   "repository": {
@@ -13,7 +13,9 @@
     "utf8",
     "encoding",
     "convert",
-    "charset"
+    "charset",
+    "char",
+    "detector"
   ],
   "author": "Josep Subils Rigau <josep@spellbook.io> (http://spellbook.io)",
   "license": "MIT",
