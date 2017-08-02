@@ -1,6 +1,6 @@
 {
   "name": "2utf8",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tranform string text to UTF-8",
   "main": "2utf8.js",
   "repository": {
@@ -17,17 +17,17 @@
     "char",
     "detector"
   ],
-  "author": "Josep Subils Rigau <josep@spellbook.io> (http://spellbook.io)",
+  "author": "Josep Subils <js@js.gl> (http://js.gl)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/warlock/2uf8/issues"
   },
-  "homepage": "http://www.spellbook.io",
+  "homepage": "http://www.js.gl",
   "dependencies": {
     "charset": "^1.0.0",
     "iconv": "2.2.1",
     "jschardet": "^1.4.2",
     "node-icu-charset-detector": "^0.2.0",
-    "spellbook": "^0.1.17"
+    "spellbook": "^1.0.2"
   }
 }
