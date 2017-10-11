@@ -19,25 +19,25 @@ apt-get install build-essential libicu-dev
 # Examples:
 **From string:**
 ```javascript
-var toUtf8 = require('2utf8')
-var text = toUtf8(string_from_other_encoding);
+const toUtf8 = require('2utf8')
+const text = toUtf8(string_from_other_encoding)
 console.log(text)
 ```
 
 **With html headers from request:**
 ```javascript
-var toUtf8 = require('2utf8')
-var request = require(request)
+const toUtf8 = require('2utf8')
+const request = require(request)
 
-request('http://www.spellbook.io', (err, res, body) => {
-  var text = toUtf8(body, res.headers);
+request('http://www.js.gl', (err, res, body) => {
+  const text = toUtf8(body, res.headers)
   console.log(text)
 })
 ```
 
 ## License
 The MIT License (MIT)
-Copyright (c) 2015 Josep Subils Rigau (josep@spellbook.io)
+Copyright (c) 2015 Josep Subils (js@js.gl)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

@@ -1,21 +1,22 @@
-var charset = require('charset')
-var sb = require('spellbook')
-var icu = require('node-icu-charset-detector')
-var jchardet = require('jschardet')
-var Iconv = require('iconv').Iconv
+const charset = require('charset')
+const tck = require('tck')
+const icu = require('node-icu-charset-detector')
+const jchardet = require('jschardet')
+const Iconv = require('iconv').Iconv
 
-module.exports = function (text, html_headers) {
-  if (!sb.empty(text)) {
+module.exports = (text, html_headers) => {
+  if (tck.isEmpty(text)) {
     var enc
-    if (!sb.empty(html_headers)) enc = charset(html_headers, text)
-    if (sb.empty(enc)) enc = icu.detectCharset(new Buffer(text, 'binary')).toString()
-    if (sb.empty(enc)) enc = jchardet.detect(text).encoding.toLowerCase()
-    if (sb.empty(enc)) {
+    if (tck.isEmpty(html_headers)) enc = charset(html_headers, text)
+    if (!tck.isEmpty(enc)) enc = icu.detectCharset(new Buffer(text, 'binary')).toString()
+    if (!tck.isEmpty(enc)) enc = jchardet.detect(text).encoding.toLowerCase()
+    if (!tck.isEmpty(enc)) {
       return text.toString('utf-8')
     } else {
       try {
-        var iconva = new Iconv(enc, 'UTF-8//TRANSLIT//IGNORE')
-        return iconva.convert(new Buffer(text, 'binary')).toString('utf-8')
+        const iconva = new Iconv(enc, 'UTF-8//TRANSLIT//IGNORE')
+        const buff = new Buffer(text, 'binary')
+        return iconva.convert(buff).toString('utf-8')
       } catch (e) {
         return text
       }
