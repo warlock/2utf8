@@ -28,6 +28,6 @@
     "iconv": "2.2.1",
     "jschardet": "^1.4.2",
     "node-icu-charset-detector": "^0.2.0",
-    "spellbook": "^1.0.2"
+    "tck": "*"
   }
 }
