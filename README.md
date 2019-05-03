@@ -1,6 +1,6 @@
 2UTF8
 ===
-> Tranform string text to UTF-8
+> Tranform string text or text buffer to UTF-8
 
 ### NPM URL
 ```
@@ -29,8 +29,8 @@ console.log(text)
 const toUtf8 = require('2utf8')
 const request = require(request)
 
-request('http://www.js.gl', (err, res, body) => {
-  const text = toUtf8(body, res.headers)
+request('http://www.js.gl', { encoding: null }, (err, res, bodybuffer) => {
+  const text = toUtf8(bodybuffer, res.headers)
   console.log(text)
 })
 ```
