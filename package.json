@@ -1,6 +1,6 @@
 {
   "name": "2utf8",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Tranform string text to UTF-8",
   "main": "2utf8.js",
   "repository": {

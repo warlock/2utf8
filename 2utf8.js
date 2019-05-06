@@ -16,8 +16,8 @@ module.exports = (bufftext, html_headers) => {
       try {
         const iconva = new Iconv(enc, 'UTF-8//TRANSLIT//IGNORE')
         return iconva.convert(bufftext).toString('utf-8')
-      } catch (e) {
-        return bufftext
+      } catch (error) {
+        return bufftext.toString('utf-8')
       }
     }
   } else return ''
