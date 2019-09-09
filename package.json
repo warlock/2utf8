@@ -7,7 +7,16 @@
     "type": "git",
     "url": "git+https://github.com/warlock/2utf8.git"
   },
-  "keywords": ["utf", "utf-8", "utf8", "encoding", "convert", "charset", "char", "detector"],
+  "keywords": [
+    "utf",
+    "utf-8",
+    "utf8",
+    "encoding",
+    "convert",
+    "charset",
+    "char",
+    "detector"
+  ],
   "author": "Josep Subils <js@js.gl> (http://js.gl)",
   "license": "MIT",
   "bugs": {
@@ -16,8 +25,8 @@
   "homepage": "http://www.js.gl",
   "dependencies": {
     "charset": "^1.0.1",
-    "iconv": "2.2.1",
-    "jschardet": "^1.6.0",
+    "iconv": "2.3.4",
+    "jschardet": "^2.1.0",
     "node-icu-charset-detector": "^0.2.0",
     "tck": "*"
   }
