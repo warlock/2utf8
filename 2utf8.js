@@ -2,7 +2,7 @@ const chardet = require('chardet')
 const charset = require('charset')
 const iconv = require('iconv-lite')
 
-module.exports = async (text, html_headers) => {
+module.exports = (text, html_headers) => {
   const textbuffer = Buffer.from(text)
   if (text) {
     var encoding

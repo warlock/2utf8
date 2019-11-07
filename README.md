@@ -16,7 +16,7 @@ https://github.com/warlock/2utf8
 **From string:**
 ```javascript
 const toUtf8 = require('2utf8')
-const text = await toUtf8(string_from_other_encoding)
+const text = toUtf8(string_from_other_encoding)
 console.log(text)
 ```
 
@@ -26,13 +26,11 @@ const toUtf8 = require('2utf8')
 const request = require(request)
 
 request('http://www.js.gl', { encoding: null }, (err, res, bodybuffer) => {
-  toUtf8(bodybuffer, res.headers)
-  .then(text => {
-    console.log(text)
-  })
-  .catch(error => {
+  try {
+    const text  = toUtf8(bodybuffer, res.headers)
+  } catch (error) {
     console.error(error)
-  })
+  }
 })
 ```
 
