@@ -1,23 +1,13 @@
 {
   "name": "2utf8",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Tranform string text to UTF-8",
   "main": "2utf8.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/warlock/2utf8.git"
   },
-  "keywords": [
-    "utf",
-    "utf-8",
-    "utf8",
-    "encoding",
-    "convert",
-    "charset",
-    "char",
-    "detector",
-    "chardet"
-  ],
+  "keywords": [ "utf", "utf-8", "utf8", "encoding", "convert", "charset", "char", "detector", "chardet" ],
   "author": "Josep Subils <js@js.gl> (http://js.gl)",
   "license": "MIT",
   "bugs": {
