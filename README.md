@@ -11,16 +11,12 @@ http://npmjs.com/package/2utf8
 ```
 https://github.com/warlock/2utf8
 ```
-### Install in Debian based:
-```
-apt-get install build-essential libicu-dev
-```
 
 # Examples:
 **From string:**
 ```javascript
 const toUtf8 = require('2utf8')
-const text = toUtf8(string_from_other_encoding)
+const text = await toUtf8(string_from_other_encoding)
 console.log(text)
 ```
 
@@ -30,8 +26,13 @@ const toUtf8 = require('2utf8')
 const request = require(request)
 
 request('http://www.js.gl', { encoding: null }, (err, res, bodybuffer) => {
-  const text = toUtf8(bodybuffer, res.headers)
-  console.log(text)
+  toUtf8(bodybuffer, res.headers)
+  .then(text => {
+    console.log(text)
+  })
+  .catch(error => {
+    console.error(error)
+  })
 })
 ```
 

@@ -1,24 +1,18 @@
+const chardet = require('chardet')
 const charset = require('charset')
-const tck = require('tck')
-const icu = require('node-icu-charset-detector')
-const jschardet = require('jschardet')
-const Iconv = require('iconv').Iconv
+const iconv = require('iconv-lite')
 
-module.exports = (bufftext, html_headers) => {
-  if (!tck.isEmpty(bufftext)) {
-    var enc
-    if (!tck.isEmpty(html_headers)) enc = charset(html_headers, bufftext)
-    if (tck.isEmpty(enc)) enc = icu.detectCharset(bufftext).toString()
-    if (tck.isEmpty(enc)) enc = jschardet.detect(bufftext).encoding.toLowerCase()
-    if (tck.isEmpty(enc)) {
-      return bufftext.toString('utf-8')
+module.exports = async (text, html_headers) => {
+  const textbuffer = Buffer.from(text)
+  if (text) {
+    var encoding
+    if (html_headers) {
+      encoding = charset(html_headers, text)
     } else {
-      try {
-        const iconva = new Iconv(enc, 'UTF-8//TRANSLIT//IGNORE')
-        return iconva.convert(bufftext).toString('utf-8')
-      } catch (error) {
-        return bufftext.toString('utf-8')
-      }
+      encoding = chardet.detect(textbuffer)
     }
-  } else return ''
+    const decoded = iconv.encode(textbuffer, encoding)
+    const encoded = iconv.decode(decoded, 'utf8')
+    return encoded
+  } else throw 'No text input'
 }
