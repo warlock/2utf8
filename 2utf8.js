@@ -1,18 +1,11 @@
 const chardet = require('chardet')
-const charset = require('charset')
 const iconv = require('iconv-lite')
 
-module.exports = (text, html_headers) => {
+module.exports = text => {
+  if (!text) throw 'No text input'
   const textbuffer = Buffer.from(text)
-  if (text) {
-    var encoding
-    if (html_headers) {
-      encoding = charset(html_headers, text)
-    } else {
-      encoding = chardet.detect(textbuffer)
-    }
-    const decoded = iconv.encode(textbuffer, encoding)
-    const encoded = iconv.decode(decoded, 'utf8')
-    return encoded
-  } else throw 'No text input'
+  const encoding = chardet.detect(textbuffer)
+  const decoded = iconv.decode(textbuffer, encoding)
+  const encoded = iconv.encode(decoded, 'utf8').toString()
+  return encoded
 }

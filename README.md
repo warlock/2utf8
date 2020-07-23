@@ -1,33 +1,29 @@
-2UTF8
-===
+# 2UTF8
+
 > Tranform string text or text buffer to UTF-8
 
 ### NPM URL
+
 ```
 http://npmjs.com/package/2utf8
 ```
 
 ### GIT URL
+
 ```
 https://github.com/warlock/2utf8
 ```
 
-# Examples:
-**From string:**
-```javascript
-const toUtf8 = require('2utf8')
-const text = toUtf8(string_from_other_encoding)
-console.log(text)
-```
+# Example:
 
-**With html headers from request:**
 ```javascript
 const toUtf8 = require('2utf8')
 const request = require(request)
 
-request('http://www.js.gl', { encoding: null }, (err, res, bodybuffer) => {
+request('https://www.js.gl', { encoding: null }, (err, res, bodybuffer) => {
   try {
-    const text  = toUtf8(bodybuffer, res.headers)
+    const text = toUtf8(bodybuffer)
+    console.log(text)
   } catch (error) {
     console.error(error)
   }
@@ -35,6 +31,7 @@ request('http://www.js.gl', { encoding: null }, (err, res, bodybuffer) => {
 ```
 
 ## License
+
 The MIT License (MIT)
 Copyright (c) 2017 Josep Subils (js@js.gl)
 
